@@ -7,7 +7,15 @@
     "longName": "What If...",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "file": "images/tri_icon",
+                "menuIcon": true,
+                "name": "TRI_ICON",
+                "targetPlatforms": null,
+                "type": "png"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "What If...",

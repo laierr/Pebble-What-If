@@ -8,7 +8,7 @@ static char out_string[140];
 
 static char who[][25] = {"jews", "masons", "reptiloids", "kittens", "neighbors", 
                       "government", "aliens", "Illuminati", "Great Old Ones", 
-                      "police", "CIA", "KGB", "owls", "narwhals", "amoebas", "gays", "Iternet trolls", "secret services",
+                      "police", "CIA", "KGB", "owls", "narwhals", "amoebas", "gays", "Internet trolls", "secret services",
                       "Templars", "hipsters", "Great Ancestors", "spirits", "koalas", "sloths", "clergy", 
                       "necromophs", "xenomorphs", "shoggoths", "Santa's little helpers", "Reapers",
                       "grandmas", "immigrants", "terrorists", "jet fuel"
@@ -41,7 +41,6 @@ void clock () {
 }
 
 void clock_runner(struct tm *tick_time, TimeUnits units_changed) {
-
   clock();
   deep_thought();
 }
@@ -61,6 +60,7 @@ void handle_init(void) {
   text_layer_set_background_color(what_layer, GColorBlack);
   text_layer_set_text_color(what_layer, GColorWhite);
   text_layer_set_text_alignment(what_layer, GTextAlignmentCenter);
+  text_layer_set_font(what_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
 
   layer_add_child(window_get_root_layer(my_window), text_layer_get_layer(text_layer));
   layer_add_child(window_get_root_layer(my_window), text_layer_get_layer(what_layer));
@@ -70,7 +70,6 @@ void handle_init(void) {
   
   clock();
   deep_thought();
-  
   
   tick_timer_service_subscribe(MINUTE_UNIT, &clock_runner);  
   
