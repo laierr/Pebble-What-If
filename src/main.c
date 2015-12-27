@@ -31,14 +31,18 @@ void deep_thought() {
   snprintf(out_string, 140, "What if %s %s?", who[who_rnd], what[what_rnd]);
 }
 
-void clock_runner(struct tm *tick_time, TimeUnits units_changed) {
+void clock () {
   time_t now = time(NULL);
   struct tm *current_time = localtime(&now);
   static char time[] = "XX:XX";
   
   strftime(time, sizeof(time), "%H:%M", current_time);
   text_layer_set_text(text_layer, time);
+}
 
+void clock_runner(struct tm *tick_time, TimeUnits units_changed) {
+
+  clock();
   deep_thought();
 }
 
@@ -63,6 +67,10 @@ void handle_init(void) {
 
   text_layer_set_text(what_layer, out_string);
   window_stack_push(my_window, true);
+  
+  clock();
+  deep_thought();
+  
   
   tick_timer_service_subscribe(MINUTE_UNIT, &clock_runner);  
   

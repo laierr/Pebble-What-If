@@ -9,11 +9,14 @@
     "resources": {
         "media": []
     },
-    "sdkVersion": "2",
+    "sdkVersion": "3",
     "shortName": "What If...",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "23448e6f-e34f-4b9f-8d8b-74c0cce2292a",
-    "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.04",
     "watchapp": {
         "watchface": true
     }
