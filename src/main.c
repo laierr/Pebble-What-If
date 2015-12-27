@@ -24,6 +24,7 @@ static char what[][100] = {"are watching me", "secretly rule the world", "are be
                         "are gonna steal my job", "are better than me"
                               };
 
+
 void deep_thought() {
   srand(time(NULL));
   int who_rnd = rand() % sizeof(who) / sizeof(who[0]);
@@ -31,7 +32,7 @@ void deep_thought() {
   snprintf(out_string, 140, "What if %s %s?", who[who_rnd], what[what_rnd]);
 }
 
-void clock () {
+  void the_clock() {
   time_t now = time(NULL);
   struct tm *current_time = localtime(&now);
   static char time[] = "XX:XX";
@@ -41,12 +42,12 @@ void clock () {
 }
 
 void clock_runner(struct tm *tick_time, TimeUnits units_changed) {
-  clock();
+  the_clock();
   deep_thought();
 }
 
 void handle_init(void) {  
-  
+
   my_window = window_create();
   window_set_background_color(my_window, GColorBlack);
   
@@ -68,7 +69,7 @@ void handle_init(void) {
   text_layer_set_text(what_layer, out_string);
   window_stack_push(my_window, true);
   
-  clock();
+  the_clock();
   deep_thought();
   
   tick_timer_service_subscribe(MINUTE_UNIT, &clock_runner);  

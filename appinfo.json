@@ -12,19 +12,15 @@
                 "file": "images/tri_icon",
                 "menuIcon": true,
                 "name": "TRI_ICON",
-                "targetPlatforms": null,
                 "type": "png"
             }
         ]
     },
-    "sdkVersion": "3",
+    "sdkVersion": "2",
     "shortName": "What If...",
-    "targetPlatforms": [
-        "aplite",
-        "basalt"
-    ],
-    "uuid": "23448e6f-e34f-4b9f-8d8b-74c0cce2292a",
-    "versionLabel": "1.04",
+    "uuid": "8cfb394e-ab0b-4a89-a257-e0665fbce31f",
+    "versionCode": 1,
+    "versionLabel": "1.05",
     "watchapp": {
         "watchface": true
     }
