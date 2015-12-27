@@ -23,7 +23,7 @@ void deep_thought() {
                         "are just a figment of my imagination", "control me", "control media", 
                         "are responsible for climate change", "are work of the devil", "have a hivemind", 
                         "making a better world", "also do drugs", "also writing apps for Pebble", 
-                        "are gonna steal my job", "are better then me"
+                        "are gonna steal my job", "are better than me"
                               };
   srand(time(NULL));
   int who_rnd = rand() % 33;
