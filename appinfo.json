@@ -1,18 +1,20 @@
 {
-  "uuid": "1c689ef4-2340-4aef-bdd6-01491f4dd0b0",
-  "shortName": "what-if",
-  "longName": "what-if",
-  "companyName": "MakeAwesomeHappen",
-  "versionLabel": "1.0",
-  "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt", "chalk"],
-  "watchapp": {
-    "watchface": false
-  },
-  "appKeys": {
-    "dummy": 0
-  },
-  "resources": {
-    "media": []
-  }
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "kenderberator@gmail.com",
+    "longName": "What If...",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "2",
+    "shortName": "What If...",
+    "uuid": "23448e6f-e34f-4b9f-8d8b-74c0cce2292a",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
 }
