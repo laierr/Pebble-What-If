@@ -6,17 +6,15 @@ TextLayer *what_layer;
 
 static char out_string[140];
 
-
-void deep_thought() {
-  static char who[33][25] = {"jews", "masons", "reptiloids", "kittens", "neighbors", 
+ static char who[][25] = {"jews", "masons", "reptiloids", "kittens", "neighbors", 
                       "government", "aliens", "Illuminati", "Great Old Ones", 
                       "police", "CIA", "KGB", "owls", "narwhals", "amoebas", "gays", "Iternet trolls", "secret services",
                       "Templars", "hipsters", "Great Ancestors", "spirits", "koalas", "sloths", "clergy", 
                       "necromophs", "xenomorphs", "shoggoths", "Santa's little helpers", "Reapers",
-                      "grandmas", "immigrants", "terrorists"
+                      "grandmas", "immigrants", "terrorists", "jet fuel"
                       
                             };
-  static char what[26][100] = {"are watching me", "secretly rule the world", "are behind 9/11", "can melt steel beams", 
+  static char what[][100] = {"are watching me", "secretly rule the world", "are behind 9/11", "can melt steel beams", 
                        "are wating me for a dinner", "have psychic powers", "are not real", "are not afraid of me", 
                         "are trying to kill me", "are actually nice", "are not what they seem", "are here for fish",
                         "don't know the Truth", "are under my bed", "are using me", 
@@ -25,25 +23,25 @@ void deep_thought() {
                         "making a better world", "also do drugs", "also writing apps for Pebble", 
                         "are gonna steal my job", "are better than me"
                               };
+void deep_thought() {
+  
   srand(time(NULL));
-  int who_rnd = rand() % 33;
-  int what_rnd = rand() % 26;
-  //APP_LOG(APP_LOG_LEVEL_DEBUG, "who: %d, what: %d", who_rnd, what_rnd);
+  int who_rnd = rand() % sizeof(who) / sizeof(who[0]);
+  int what_rnd = rand() % sizeof(what) / sizeof(what[0]);
   snprintf(out_string, 140, "What if %s %s?", who[who_rnd], what[what_rnd]);
 }
 
-void handle_init(void) {
- 
-  void clock_runner(struct tm *tick_time, TimeUnits units_changed) {
-    time_t now = time(NULL);
-    struct tm *current_time = localtime(&now);
-    static char time[] = "XX:XX";
-    strftime(time, sizeof(time), "%H:%M", current_time);
-    text_layer_set_text(text_layer, time);
+void clock_runner(struct tm *tick_time, TimeUnits units_changed) {
+  time_t now = time(NULL);
+  struct tm *current_time = localtime(&now);
+  static char time[] = "XX:XX";
+  strftime(time, sizeof(time), "%H:%M", current_time);
+  text_layer_set_text(text_layer, time);
 
-    deep_thought();
-  }
-  
+  deep_thought();
+}
+
+void handle_init(void) {  
   
   my_window = window_create();
   window_set_background_color(my_window, GColorBlack);
